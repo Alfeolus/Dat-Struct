@@ -74,7 +74,7 @@ int getHashKey(char *id){
 	return (x-1) % HASH_SIZE;
 }
 
-struct Booking *newBooking(char *fullname, char*phonenumber, int age,
+struct Booking *newBooking(char *fullname, char *phonenumber, int age,
 	char *roomtype, int stayduration){
 	char *bookingid = generateID(roomtype);
 	struct Booking* curr = (Booking*) malloc(sizeof(Booking));
@@ -94,13 +94,13 @@ void pushTail(struct Booking *newData){
 	if(bookings[hash] == NULL){
 		bookings[hash] = newData;	
 	}else{
-		struct Booking *curr = bookings[hash];
-		while(curr->next){
-			curr = curr->next;
+		struct Booking *temp = bookings[hash];
+		while(temp->next){
+			temp = temp->next;
 		}
-		curr->next = newData;
+		temp->next = newData;
 	}
-	
+
 }
 
 void createBooking(){
