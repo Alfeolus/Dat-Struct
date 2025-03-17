@@ -58,7 +58,6 @@ void remove(char nama[]){
         puts("No Entry"); return;
     }
     ticket* temp = h;
-    while (strcmp(temp->name, nama) != 0 && temp->next != NULL) temp = temp->next;
     if (strcmp(h->name, nama) == 0) {
         temp = h;
         h = h->next;
@@ -69,9 +68,10 @@ void remove(char nama[]){
         t->next = NULL;
     }
     else{
+        while (strcmp(temp->name, nama) != 0 && temp->next != NULL) temp = temp->next;
         temp->next->prev = temp->prev;
         temp->prev->next = temp->next;
-    }
+    } 
     free(temp);
 }
 

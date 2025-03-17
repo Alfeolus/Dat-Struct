@@ -20,18 +20,26 @@ bool validName(char *name){
 }
 
 bool validLibraryId(char *libraryId){
-    int count  = 0;
-    if(libraryId[0] != 'L' || libraryId[1] != 'I' || libraryId[2] != 'B'){
-        return false;
-    }
+    // int count  = 0;
+    // if(libraryId[0] != 'L' || libraryId[1] != 'I' || libraryId[2] != 'B'){
+    //     return false;
+    // }
 
-    else{
-        //LIB12345
-        for(int i = 3 ; i < 8; i++){
+    // else{
+    //     //LIB12345
+    //     for(int i = 3 ; i < 8; i++){
+    //         count++;
+    //     }
+    // }
+    // return count == 5;
+
+    strncmp(libraryId, "LIB-", 4);
+    int count = 0;
+    for(int i = 4; i < strlen(libraryId); i++){
+        if(isdigit(libraryId[i])){
             count++;
         }
     }
-    return count == 5;
 }
 
 bool validTitle(char *title){
@@ -71,6 +79,7 @@ int getHash(char *borrowId){
     else{
         key = str[len/2];
     }
+
     return key % max;
 }
 

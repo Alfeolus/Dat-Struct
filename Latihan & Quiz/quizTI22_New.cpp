@@ -6,7 +6,7 @@
 struct tnode{
 	char adress[101]; 
 	char id[101]; 
-	char type[101]; 
+	char type[101];
 	int priority; 
 	tnode* next; 
 } *h, *t; 
