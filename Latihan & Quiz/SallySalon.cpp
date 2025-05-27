@@ -288,7 +288,7 @@ node* del(node* root){
 	printf("insert name to be deleted: "); 
 	scanf("%[^\n]", name); getchar(); 
 	
-	if(alreadyInTree(root, name) == 1){ // data ancur kalo data gaada di tree
+	if(alreadyInTree(root, name) == 1){
 		root = deleteAVL(root, name); 
 		printf("[Data successfully deleted]\n"); 
 		count--; 
